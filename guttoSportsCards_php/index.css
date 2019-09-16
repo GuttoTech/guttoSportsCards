@@ -1,0 +1,165 @@
+@charset "utf-8";
+
+/*
+    Michael Guttormsen
+    GuttoTech
+    Date: 9/16/2019
+
+    This style sheet affects index.php
+
+*/
+
+
+/*html styles*/
+
+
+html{
+	background: url(seahawkMDG.jpg)80% / cover no-repeat;
+	background-attachment: fixed;
+	background-position-y: inherit;
+	background-color: black;
+	color: purple;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+
+/* Body styles */
+
+
+body {	
+	display: block;
+	width: auto;
+    min-width: auto;
+    max-width: fit-content;	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* Site Navigation & header Styles */
+
+
+header {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+    flex-flow: row wrap; 
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+	border-bottom: solid red 2px;
+	width: auto;
+}
+header img {
+	border-left: 2px solid black;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+}
+nav#nav {
+   -webkit-flex: 1 1 441px;
+   flex: 1 1 441px;
+   height: 47px;
+}
+
+nav#nav ul {
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    list-style-type: none; 
+    padding-left: 0px; 
+	padding-right: 10px;
+}
+
+nav#nav > ul > li {
+	-webkit-flex: 0 1 auto;
+    flex: 0 1 auto;
+	font-size: 1.6em;
+	padding: 0px 10px;
+}
+
+nav#nav a {
+	display: block;
+	box-shadow: inset 20px -15px 25px 0px rgba(22, 230, 19, 0.73),
+            	inset -15px -15px 25px rgba(37, 36, 36, 0.4);
+	border-radius: 5px;
+    text-decoration: underline;
+	text-decoration-color: green;
+    color: #9b4bd8; 	
+	letter-spacing: 0em;
+	text-shadow: rgba(0, 0, 0, 1) 1px -1px 1px;
+	transition: color 1.3s ease-in 0.5s, font-size 2s ease, 
+			   letter-spacing 2s ease-out, text-shadow 2s cubic-bezier(0.6, 0, 0.8, 0.5);
+}
+
+nav#nav a:hover {
+    text-decoration: overline underline;
+    color: rgb(255, 183, 25);
+	font-size: 2em;
+	letter-spacing: 0.1em;
+	text-shadow: rgba(0, 0, 0, 0.5) 15px -3px 8px;
+}
+
+
+/*section Styles */
+
+
+section {
+	width: auto;	
+}
+
+section > h1 {
+	background-color: rgba(0, 0, 0, 0.75);
+	border-radius: 10px;
+	width: 100%;
+	font: 4.0em serif;
+	text-align: center;
+	color: #9b4bd8;
+}
+
+
+/*article styles */
+
+
+article h2.aHeading {
+	text-align:center;
+}
+article#mh {
+	background-color: rgba(0, 0, 0, 0.80);
+	border: 2px solid red;
+	width: 48%;
+	border-radius:10px;
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	color: #9b4bd8;
+}
+article#mh p {
+	padding: 10px
+}
+
+
+/*Footer*/
+
+
+footer {
+	display: flex;
+	background: linear-gradient(to top right, rgb(6, 6, 6), rgb(164, 163, 234));
+	color: white;
+}
+
+footer p {
+	padding: 0px 10px 0px 10px;
+}
+
+footer > a#footerLink {
+	margin: 15px 100px 9px 75px;
+	color:white;
+}
+footer > a#footerLink:hover {
+	text-decoration: overline underline;
+    color: rgb(255, 183, 25);
+	transform:scale(2); 
+}

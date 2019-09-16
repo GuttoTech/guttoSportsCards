@@ -14,22 +14,28 @@
    
     <?php
     
-     $name= $_GET["playerName"];
-     $year= $_GET["year"];
-     $brand= $_GET["brand"];
-     $grade= $_GET["grade"];
-     $value= $_GET["value"];
-     //'CREATE TABLE cards(playerName varchar(20), year varchar(4), brand varchar(11), grade varchar(13), value varchar(10))');
-     if($db = sqlite_open('cards.db', 0666, $sqliteError))
+      $name= $_GET["playerName"];
+      $year= $_GET["year"];
+      $brand= $_GET["brand"];
+      $grade= $_GET["grade"];
+      $value= $_GET["value"];
+      
+      try {
+        $db = new PDO('sqlite:cards.db');
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      } 
+      catch (PDOException $e) 
       {
-	      sqlite_query($db,"INSERT INTO cards VALUES('$name','$year','$brand','$grade','$value')");
+        echo $e->getMessage();
+      }
+      $query = "INSERT INTO cards VALUES('$name','$year','$brand','$grade','$value')";
+        
+      $sth = $db->prepare($query);
+      $sth->execute();  
+	    
 	      printf("%s by %s from %s with a %s grade for an estimate value of $%s INSERTED", $name, $brand, $year, $grade, $value); 
-      }
-      else
-      {
-	      die($sqliteError);
-      }
-     
+      
+      $db = null;
      
     ?>
            
