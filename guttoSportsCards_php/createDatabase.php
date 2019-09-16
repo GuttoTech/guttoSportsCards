@@ -14,18 +14,20 @@
     
     
     <?php
-    
-      if($db = sqlite_open('cards.db', 0666, $sqliteError))
-      {
-	      sqlite_query($db, 'DROP TABLE cards');
-	      sqlite_query($db, 'CREATE TABLE cards(playerName varchar(20), year varchar(4), brand varchar(11), grade varchar(13), value varchar(10))');
-	      printf("database created");
+      try {
+        $db = new PDO('sqlite:C:\Users\micha\OneDrive\Documents\development\guttoSportsCards_php\cards.db');
       }
-      else
-      {
-	      die($sqliteError);
+      catch(PDOException $e) {
+          echo $e->getMessage();
       }
-    ?>
+
+      //create table
+      $db->exec("CREATE TABLE cards(playerName TEXT, year INTEGER, brand TEXT, grade TEXT, value INTEGER)");
+      	      
+	    printf("Database Created");
+      
+    ?> 
+
    
            
     <img src= "griffey.jpg" /><br />
